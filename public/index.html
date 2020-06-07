@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <title>Resume Builder</title>
+    <!-- <link rel="stylesheet" href="/css/main1.css"> -->
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript">
+        let noenter = () => {
+            return !(window.event && window.event.keyCode === 13);
+        }
+    </script>
+</head>
+<body>
+    <form id="form" class='form' method="post" onkeypress="return noenter()">
+        <section class="about">
+            <p>About</p>
+            <div class="about-row-1">
+                <div>
+                    <label for="fullName">Name*</label>
+                    <input id='fullName' name="fullName" type="text" placeholder="Enter your name" autocomplete="off">
+                    <span class="full-name-error">Must not be empty</span>
+                </div>
+    
+                <div>
+                    <label for="jobRole">Job Role*</label>
+                    <input id='jobRole' name="jobRole" type="text" placeholder="Enter your job role" autocomplete="off">
+                    <span class="job-role-error">Must not be empty</span>
+                </div>
+            </div>
+
+            <div class="about-row-2">
+                <div>
+                    <label for="website">Website</label>
+                    <input id='website' name="website" type="text" placeholder="Enter your website." autocomplete="off">
+                </div>
+
+                <div>
+                    <label for="interest">Interest*</label>
+                    <input id='interest' name="interest" type="search" placeholder="Separate interests with comma mark" autocomplete="off">
+                    <span class="interest-error">Must not be empty</span>
+                </div>
+            </div>
+
+            <div class="about-row-3">
+                <label for="objective">Career Objective*</label>
+                <textarea id="objective" name="objective" placeholder="Write something about you and your career objective." autocomplete="off"></textarea>
+                <span class="objective-error">Must not be empty</span>
+            </div>
+
+        </section>
+        
+         <section class="contact">
+            <p>Contact</p>
+            <div class="contact-row-1">
+                <label for="address">Address*</label>
+                <input id='address' name="address" type="text" placeholder="Address" autocomplete="off">
+                <span class="adress-error">Must not be empty</span>
+            </div>
+
+            <div class="contact-row-2">
+                <div>
+                    <label for="email">Email*</label>
+                    <input id="email" name="email" placeholder="Enter Your Email" type="email" autocomplete="off">
+                    <span class="email-error">Must not be empty</span>
+                </div>
+
+                <div>
+                    <label class="mobile" for="mobile">Mobile*</label>
+                    <input id='mobile' name="mobile" placeholder="#" autocomplete="off">
+                    <span class="mobile-error">Must not be empty</span>
+                </div>
+            </div>
+            
+        </section>
+        
+        <section class="social">
+            <p>Social</p>
+            <div class="social-row-1">
+                <label for="social">Account*</label>
+                <input id="social" type="text" placeholder="Link to your account" autocomplete="off">
+                <button id="social-add-button" class="social-add-button" type="button">Add</button> 
+                <span class="social-error">Must not be empty</span>
+            </div>
+        </section>
+        
+        <section class='education'>
+            <p class="education-p">Education</p>
+            <div class="education-row-1">
+                <label for="education">Studies*</label>
+                <input id='education' type="text" placeholder="University name, Field of Study, Duration, Percentage/Grade." autocomplete="off">
+                <button id='education-add-button' class="education-add-button" type="button">Add</button>
+                <span class="education-error">Must not be empty</span>
+            </div>
+
+        </section>
+
+        <section class="project">
+            <p>Projects</p>
+            <div class="project-row-1">
+                <label for="project">Description*</label>
+                <input id='project' type="text" placeholder="Write something about your project" autocomplete="off">
+                <button id="project-add-button" class="project-add-button" type="button">Add</button>
+                <span class="project-error">Must not be empty</span>
+            </div>
+
+        </section>
+        
+        <section  class="experience">
+            <p class="experience-p">Experience</p>
+            <div class="experience-row-1">
+                <label for="work">Worked at</label>
+                <input id='work' name="work" type="text" placeholder="If none, leave it blank" autocomplete="off">
+                <button id="work-add-button" class="experience-add-button" type="button">Add</button>
+                <span class="experience-error">Must not be empty</span>
+            </div>
+
+            
+        </section>
+        
+        <section class="skill">
+            <p>Skills</p>
+            <!--Technical skills(languages and other), personal skills-->
+            <div class="skill-row-1">
+                <div class="tech-skill-wrapper">
+                    <label for="techSkill">Technical Skills*</label>
+                    <input id="techSkill" name="techSkill" placeholder="Separate skills with comma mark" autocomplete="off">
+                    <span class="tech-skill-error">Must not be empty</span>
+                </div>
+                <div class="personal-skill-wrapper">
+                    <label for="personalSkill">Personal Skills*</label>
+                    <input id="personalSkill" name="personalSkill" type="text" placeholder="Separate skills with comma mark" autocomplete="off">
+                    <span class="personal-skill-error">Must not be empty</span>
+                </div>
+            </div>
+
+        </section> 
+         
+        <section class="control">
+            <button type="submit">Submit</button>
+        </section>
+    </form>
+    <script src="js/index.js"></script>
+</body>
+</html>

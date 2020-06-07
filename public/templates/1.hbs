@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <title>Template 1</title>
+    <style>
+        :root {
+            --body-width: 21cm;
+            --body-height: 29.7cm;
+            --left-section-padding: 15px;
+            --right-section-padding: 15px;
+
+        }
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: var(--body-width);
+            height: var(--body-height);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: flex;
+        }
+
+        .left {
+            width: 40%;
+            height: 100%;
+            background-color: #91AA9D;
+            /* padding: var(--left-section-padding); */
+
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+
+        .initials {
+            margin-top: -50px;
+        }
+
+        .initials h1 {
+            font-size: 200px;
+            font-weight: 400;
+            text-align: center;
+            color: #3E606F;
+        }
+
+        .full-name {
+            margin-top: -50px;
+        }
+
+        .full-name h2{
+            font-size: 50px;
+            /*set a js script to change the font size if it exceeds 8 digits yo 35px*/
+            font-weight: 400;
+            text-align: center;
+            color: rgb(35, 54, 62);
+            text-transform: uppercase;
+            padding: 5px;
+            letter-spacing: 2px;
+            line-height: 1;
+            box-sizing: content-box;
+
+        }
+
+        .full-name h3 {
+            font-size: 20px;
+            text-align: center;
+            font-weight: 500;
+            color: rgb(35, 54, 62);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        .contact, .social, .interest, .soft-skill {
+            width: 90%;
+        }
+
+        .contact h3, .social h3, .interest h3, .soft-skill h3 {
+            background-color: rgb(35, 54, 62);
+            color: #91AA9D;
+            border-radius: 2px;
+            padding: 10px;
+            letter-spacing: 1px;
+            font-size: 20px;
+            font-weight: 500;
+
+        }
+
+        .contact div, .social div, .interest div, .soft-skill div {
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        .contact p, .social p, .interest p, .soft-skill p {
+            color: rgb(35, 54, 62);
+            font-size: inherit;
+            font-weight: 400;
+            letter-spacing: 1px;
+            overflow-wrap: break-word;
+        }
+
+        .right {
+            width: 60%;
+            height: 100%;
+            background-color: rgb(35, 54, 62);
+            padding: 0 var(--right-section-padding);
+
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-evenly;
+        }
+
+        .profile div, .project div, .experience div, .education div, .skill div{
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .profile h3, .project h3, .experience h3, .education h3, .skill h3 {
+            background-color: #91AA9D;
+            color: rgb(35, 54, 62);
+            border-radius: 2px;
+            padding: 10px;
+            letter-spacing: 1px;
+            font-size: 20px;
+            font-weight: 500;
+
+        }
+
+        .profile p, .project p, .experience p, .education p, .skill p {
+            color: #91AA9D;
+            font-size: inherit;
+            font-weight: 400;
+            letter-spacing: 1px;
+            overflow-wrap: break-word;
+        }
+
+        .edu-skill {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+
+        .education, .skill {
+            width: calc(50% - 8px);
+        }
+
+        #download {
+            position: fixed;
+            right: 15px;
+            top: 292px;
+            width: 245px;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            background-color: black;
+            color: white;
+            font-weight: 500;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="left">
+        <div class="initials">
+            <h1 id="initials" style="font-size: {{initialsLetter}}px; font-weight: {{initialsWeight}};">{{initials}}</h1>
+        </div>
+        <div class="full-name">
+            <h2 id="full-name" style="font-size: {{name}}px; font-weight: {{fullNameWeight}};">{{fullName}}</h2>
+            <h3 id="job-title" style="font-size: {{jobTitle}}px; font-weight: {{jobTitleWeight}};">{{jobRole}}</h3>
+        </div>
+        <div class="contact">
+            <h3>Contact</h3>
+            <div style="font-size: {{paragraphLeft}}px;">
+                <p>Θ&nbsp;{{mobile}}</p>
+                {{#if website}}
+                <p>Θ&nbsp;{{website}}</p>
+                {{/if}}
+                <p>Θ&nbsp;{{email}}</p>
+                <p>Θ&nbsp;{{address}}</p>
+            </div>
+        </div>
+        <div class="social">
+            <h3>Social Media</h3>
+            <div style="font-size: {{paragraphLeft}}px;">
+                {{#each social}}
+                    <p style="font-size: {{paragraphLeft}}px;">Θ&nbsp;{{this}}</p>
+                    {{else}}
+                    <p style="font-size: {{paragraphLeft}}px;">Θ&nbsp;{{social}}</p>
+                {{/each}}
+            </div>
+        </div>
+        <div class="interest">
+            <h3>Interest</h3>
+            <div style="font-size: {{paragraphLeft}}px;">
+                {{#each interest}}
+                    <p>Θ&nbsp;{{this}}</p>
+                {{/each}}
+            </div>
+        </div>
+        <div class="soft-skill">
+            <h3>Soft Skills</h3>
+            <div style="font-size: {{paragraphLeft}}px;">
+                {{#each personalSkill}}
+                    <p>Θ&nbsp;{{this}}</p>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+    <section class="right">
+        <div class="profile">
+            <h3>Profile</h3>
+            <div style="font-size: {{paragraphRight}}px;">
+                <p>{{objective}}</p>
+            </div>
+        </div>
+        <div class="project">
+            <h3>Project</h3>
+            <div style="font-size: {{paragraphRight}}px;">
+                {{#each project}}
+                <p>{{counter @index}}. {{this}}</p>
+                {{else}}
+                <p>1. {{project}}</p>
+                {{/each}}
+            </div>
+
+        </div>
+        {{#if work}}
+        <div class="experience">
+            <h3>Experience</h3>
+            <div style="font-size: {{paragraphRight}}px;">
+                {{#each work}}
+                <p>{{counter @index}}. {{this}}</p>
+                {{else}}
+                <p>1. {{work}}</p>
+                {{/each}}
+            </div>
+        </div>
+        {{/if}}
+
+        <div class="edu-skill">
+            <div class="education">
+                <h3>Education</h3>
+                <div style="font-size: {{paragraphRight}}px;">
+                    {{#each education}}
+                        <p>{{this}}</p>
+                        <br>
+                        {{else}}
+                        <p>{{education}}</p>
+                    {{/each}}
+                </div>
+
+            </div>
+            <div class="skill">
+                <h3>Skill</h3>
+                <div style="font-size: {{paragraphRight}}px;">
+                    {{#each techSkill}}
+                    <p>{{this}}</p>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <a id="download" href="/templates/1/download">Go to Download Page</a>
+        {{!-- <a id="download" href="#">Go to Download Page</a> --}}
+    </section>
+
+    <script type="text/javascript" src="../js/dat.gui.min.js"></script>
+    <script src="../js/one.js"></script>
+</body>
+</html>

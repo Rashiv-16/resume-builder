@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #333333;
+            font-family: Arial;
+        }
+
+        h1 {
+            background-color: #2a2a2a;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        section {
+            margin: 0 auto;
+            width: 90vw;
+            height: 100vh;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-items: center;
+            justify-content: center;
+            color: cornsilk;
+            border-left: 10px solid goldenrod;
+            border-right: 10px solid goldenrod;
+        }
+
+        div {
+            background-color: #2a2a2a;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            letter-spacing: 0.1rem;
+            background-color: #2a2a2a;
+            padding: 1rem;
+            color: goldenrod;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <h1>YAYYY!</h1>
+        <a download href="/resume.pdf">Download Resume</a>
+    </section>
+    <script>
+       window.addEventListener('unload', (e) => {
+           fetch('/templates/1/download', {method: "POST"}).catch();
+       }) 
+    </script>
+</body>
+</html>

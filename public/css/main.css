@@ -1,0 +1,188 @@
+:root {
+    --font-size-header: 38px;
+    --font-size-label: 20px;
+    --font-size-input: 18px;
+    --font-size-textarea: 18px;
+    --font-weight-header: 500;
+    --padding-form: 50px 400px;
+    --padding-input: 12px;
+    --padding-textarea: 12px;
+    --global-padding-button: 15px;
+}
+
+* {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body, textarea {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.form {
+    appearance: none;
+    font-size: var(--font-size-header);
+    padding: var(--padding-form);
+    background: linear-gradient(to right top, rgb(111, 0, 255), rgb(99, 0, 144));
+}
+
+input {
+    padding: var(--padding-input);
+    width: 100%;
+    font-size: var(--font-size-input);
+    /* background-color: rgba(76, 0, 130, 0.486); */
+    background-color: indigo;
+    border: 1px solid indigo;
+    color: rgb(199, 199, 199);
+    transition: all 0.3s linear;
+}
+
+input:focus, textarea:focus {
+    border: 1px solid rgb(186, 89, 255);
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+textarea {
+    padding: var(--padding-textarea);
+    font-size: var(--font-size-textarea);
+    background-color: indigo;
+    border: 1px solid indigo;
+    color: rgb(199, 199, 199);
+    transition: all 0.3s linear;
+}
+
+button {
+    padding: var(--global-padding-button);
+    border: 1px solid indigo;
+    background-color: rgb(65, 0, 112);
+    color: rgb(163, 163, 163);
+
+}
+
+.form label {
+    font-size: var(--font-size-label);
+    width: 100%;
+}
+
+.about, .contact, .skill, .social, .education, .project, .experience {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    color: thistle;
+    font-weight: var(--font-weight-header);
+}
+
+.about-row-1, .about-row-2, .contact-row-2, .skill-row-1 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.control {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.control button {
+    width: 60%;
+    background-color: rgb(53, 0, 90);
+    color: rgb(199, 199, 199);
+    margin-top: 20px;
+}
+
+.about-row-3, .contact-row-1 {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+}
+
+.about-row-1 div, .about-row-2 div, .contact-row-2 div, .skill-row-1 div {
+    display: flex;
+    flex-flow: column wrap;
+    width: calc(50% - 5%);
+}
+
+.about > :not(:last-child), .contact > :not(:last-child) {
+    margin-bottom: 12px;
+}
+
+.skill-row-1 {
+    margin: 12px 0;
+}
+
+.social-row-1, .education-row-1, .project-row-1, .experience-row-1 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin-top: 12px;
+}
+
+.social-row-1 input, .education-row-1 input, .project-row-1 input, .experience-row-1 input {
+    width: calc(100% - 57.72px);
+}
+
+.element-added {
+    width: calc(100% - 60px);
+}
+
+.parent-element {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin-top: 12px;
+}
+
+#fullName:invalid, #jobRole:invalid, #interest:invalid, #objective:invalid, #address:invalid, #email:invalid, #mobile:invalid, #social:invalid, #education:invalid, #project:invalid, #techSkill:invalid, #personalSkill:invalid {
+    border: 1px solid red;
+}
+
+ div span {
+    color: red;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: right;
+    width: 100%;
+    visibility: hidden;
+}
+
+@media screen and (max-width: 1700px) {
+    :root {
+        --padding-form: 50px 200px;
+        --font-size-header: 35px;
+        --padding-input: 10px;
+        --padding-textarea: 10px;
+        --global-padding-button: 10px;
+        --font-size-label: 17px;
+        --font-size-input: 15px;
+        --font-size-textarea: 15px;
+    }
+
+    .social-row-1 input, .education-row-1 input, .project-row-1 input, .experience-row-1 input {
+        width: calc(100% - 47.72px);
+    }
+
+    .element-added {
+        width: calc(100% - 47.72px);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    :root {
+        --padding-form: 50px 80px;
+        --font-size-header: 30px;
+    }
+}

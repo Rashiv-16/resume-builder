@@ -14,7 +14,6 @@ const readingJson = require("./utils/readingJson");
 const app = express();
 
 //Paths
-//paths
 const publicDirectoryPath = path.join(__dirname, "/public");
 const viewPath = path.join(__dirname, "/public/templates");
 
